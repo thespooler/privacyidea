@@ -40,7 +40,7 @@ from ..models import (Realm,
                       ResolverRealm,
                       Resolver,
                       db)
-from log import log_with
+from .log import log_with
 import logging
 from privacyidea.lib.utils import sanity_name_check
 log = logging.getLogger(__name__)

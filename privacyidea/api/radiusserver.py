@@ -27,7 +27,7 @@ like RADIUS-Token or RADIUS-passthru policies.
 The code of this module is tested in tests/test_api_radiusserver.py
 """
 from flask import (Blueprint, request)
-from lib.utils import (getParam,
+from .lib.utils import (getParam,
                        required,
                        send_result)
 from ..lib.log import log_with

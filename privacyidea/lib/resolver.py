@@ -43,8 +43,8 @@ webservice!
 """
 
 import logging
-from log import log_with
-from config import (get_resolver_types,
+from .log import log_with
+from .config import (get_resolver_types,
                      get_resolver_class_dict)
 from ..models import (Resolver,
                       ResolverConfig)

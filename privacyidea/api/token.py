@@ -46,7 +46,7 @@
 
 from flask import Blueprint
 from ..lib.log import log_with
-from lib.utils import (optional,
+from .lib.utils import (optional,
                        send_result, send_error,
                        send_csv_result, required, get_all_params)
 from ..lib.user import get_user_from_param
@@ -66,7 +66,7 @@ from privacyidea.lib.error import (ParameterError, TokenAdminError)
 from privacyidea.lib.importotp import (parseOATHcsv, parseSafeNetXML,
                                        parseYubicoCSV, parsePSKCdata)
 import logging
-from lib.utils import getParam
+from .lib.utils import getParam
 from flask import request, g
 from privacyidea.lib.policy import ACTION
 from privacyidea.lib.challenge import get_challenges_paginate

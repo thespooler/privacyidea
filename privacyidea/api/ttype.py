@@ -33,7 +33,7 @@ The TiQR Token uses this API to implement its special functionalities. See
 """
 from flask import (Blueprint,
                    request)
-from lib.utils import (getParam,
+from .lib.utils import (getParam,
                        optional,
                        required,
                        send_result)

@@ -28,8 +28,8 @@ The code is tested in tests/test_lib_caconnector.py.
 """
 
 import logging
-from log import log_with
-from config import (get_caconnector_types,
+from .log import log_with
+from .config import (get_caconnector_types,
                     get_caconnector_class_dict)
 from ..models import (CAConnector,
                       CAConnectorConfig)

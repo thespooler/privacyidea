@@ -169,7 +169,7 @@ def create(directory="/var/lib/privacyidea/backup/"):
     call(["mkdir", "-p", directory])
     call(["tar", "-zcf", backup_file, CONF_DIR, sqlfile])
     os.unlink(sqlfile)
-    os.chmod(backup_file, 0600)
+    os.chmod(backup_file, 0o600)
 
 @backup_manager.command
 def restore(backup_file):
@@ -268,7 +268,7 @@ def create_enckey():
     f.write(DefaultSecurityModule.random(96))
     f.close()
     print("Encryption key written to %s" % filename)
-    os.chmod(filename, 0400)
+    os.chmod(filename, 0o400)
     print("The file permission of %s was set to 400!" % filename)
     print("Please ensure, that it is owned by the right user.   ")
 
@@ -297,7 +297,7 @@ def create_audit_keys(keysize=2048):
     f.close()
     print("Signing keys written to %s and %s" %
           (filename, app.config.get("PI_AUDIT_KEY_PUBLIC")))
-    os.chmod(filename, 0400)
+    os.chmod(filename, 0o400)
     print("The file permission of %s was set to 400!" % filename)
     print("Please ensure, that it is owned by the right user.")
 

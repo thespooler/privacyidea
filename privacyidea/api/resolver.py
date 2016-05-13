@@ -35,7 +35,7 @@ The code of this module is tested in tests/test_api_system.py
 """
 from flask import (Blueprint,
                    request)
-from lib.utils import (getParam,
+from .lib.utils import (getParam,
                        optional,
                        required,
                        send_result)

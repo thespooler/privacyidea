@@ -26,7 +26,7 @@ import logging
 log = logging.getLogger(__name__)
 import binascii
 import qrcode
-import StringIO
+import io
 import urllib
 from privacyidea.lib.crypto import urandom, geturandom
 import string

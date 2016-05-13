@@ -30,7 +30,7 @@ The code of this module is tested in tests/test_api_smtpserver.py
 """
 from flask import (Blueprint,
                    request, current_app)
-from lib.utils import (getParam,
+from .lib.utils import (getParam,
                        required,
                        send_result)
 from ..lib.log import log_with

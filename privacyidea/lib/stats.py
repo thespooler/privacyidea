@@ -26,7 +26,7 @@ This module is tested in tests/test_lib_stats.py
 import logging
 from privacyidea.lib.log import log_with
 import datetime
-import StringIO
+import io
 log = logging.getLogger(__name__)
 
 try:
