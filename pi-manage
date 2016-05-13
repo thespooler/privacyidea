@@ -264,7 +264,7 @@ def create_enckey():
         print("The file \n\t%s\nalready exist. We do not overwrite it!" %
               filename)
         sys.exit(1)
-    f = open(filename, "w")
+    f = open(filename, "wb")
     f.write(DefaultSecurityModule.random(96))
     f.close()
     print("Encryption key written to %s" % filename)
@@ -288,11 +288,11 @@ def create_audit_keys(keysize=2048):
     new_key = RSA.generate(keysize, e=65537)
     public_key = new_key.publickey().exportKey("PEM")
     private_key = new_key.exportKey("PEM")
-    f = open(filename, "w")
+    f = open(filename, "wb")
     f.write(private_key)
     f.close()
 
-    f = open(app.config.get("PI_AUDIT_KEY_PUBLIC"), "w")
+    f = open(app.config.get("PI_AUDIT_KEY_PUBLIC"), "wb")
     f.write(public_key)
     f.close()
     print("Signing keys written to %s and %s" %
