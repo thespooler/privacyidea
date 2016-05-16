@@ -156,7 +156,7 @@ def sign_response(request, response):
     else:
         response_object = response
     try:
-        content = json.loads(response_object.data)
+        content = json.loads(response_object.data.decode('utf-8', 'ignore'))
         nonce = request.all_data.get("nonce")
         if nonce:
             content["nonce"] = nonce

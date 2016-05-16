@@ -654,10 +654,10 @@ class Sign(object):
         """
         RSAkey = RSA.importKey(self.private)
         if SIGN_WITH_RSA:
-            hashvalue = HashFunc.new(s).digest()
+            hashvalue = HashFunc.new(s.encode('utf-8')).digest()
             signature = RSAkey.sign(hashvalue, 1)
         else:
-            hashvalue = HashFunc.new(s)
+            hashvalue = HashFunc.new(s.encode('utf-8'))
             signature = pkcs1_15.new(RSAkey).sign(hashvalue)
         s_signature = str(signature[0])
         return s_signature

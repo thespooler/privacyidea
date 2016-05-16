@@ -241,9 +241,9 @@ def privacyidea_error(error):
     These are not that critical exceptions.
     """
     if "audit_object" in g:
-        g.audit_object.log({"info": unicode(error)})
+        g.audit_object.log({"info": error})
         g.audit_object.finalize_log()
-    return send_error(unicode(error), error_code=error.id), 400
+    return send_error(error, error_code=error.id), 400
 
 
 # other errors
@@ -267,6 +267,6 @@ def internal_error(error):
     occurs.
     """
     if "audit_object" in g:
-        g.audit_object.log({"info": unicode(error)})
+        g.audit_object.log({"info": error})
         g.audit_object.finalize_log()
-    return send_error(unicode(error), error_code=-500), 500
+    return send_error(error, error_code=-500), 500
